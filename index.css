@@ -76,34 +76,39 @@
     color: gray
 }
 
-.x-title {
-    grid-area: x-title;
+.grid-title {
     margin-left: 1em;
     align-self: flex-end;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.x-title {
+    grid-area: x-title;
 }
 
 .y-title {
     grid-area: y-title;
-    margin-left: 1em;
-    align-self: flex-end;
 }
 
 .z-title {
     grid-area: z-title;
-    margin-left: 1em;
-    align-self: flex-end;
 }
 
 .x-grid {
     grid-area: x-grid;
+    min-height: 15em;
 }
 
 .y-grid {
     grid-area: y-grid;
+    min-height: 15em;
 }
 
 .z-grid {
     grid-area: z-grid;
+    min-height: 15em;
 }
 
 .grid {
@@ -133,5 +138,9 @@
 
     .title {
         font-size: 22px;
+    }
+
+    .grid-title {
+        font-size: 0.8em;
     }
 }
