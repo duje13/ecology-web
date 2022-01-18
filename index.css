@@ -8,6 +8,12 @@
     --type2: rgb(21, 134, 21);
     --type3: rgb(192, 192, 18);
     --type4: rgb(192, 20, 20);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 1.3rem;
 }
 
 .main {
@@ -26,7 +32,6 @@
 .title {
     grid-area: title;
     margin: 1em;
-    font-size: 30px;
     font-weight: bold;
 }
 
@@ -73,7 +78,7 @@
 }
 
 .play-btn {
-    font-size: 3em;
+    font-size: 4rem;
     cursor: pointer;
 }
 
@@ -86,7 +91,6 @@
     align-self: flex-end;
     font-style: italic;
     font-weight: bold;
-    font-size: 1.3em;
 }
 
 .x-title {
@@ -140,6 +144,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+    :root {
+        font-size: 14px;
+    }
+
     .main {
         grid-template-areas:
         "language language language" 
@@ -148,13 +156,5 @@
         "x-title y-title z-title"
         "x-grid y-grid z-grid";
         grid-template-rows: min-content min-content min-content min-content auto;
-    }
-
-    .title {
-        font-size: 22px;
-    }
-
-    .grid-title {
-        font-size: 0.8em;
     }
 }
