@@ -121,13 +121,22 @@
     /*height: 600px;*/
     grid-template-columns: repeat(15, 1fr);
     grid-auto-rows: 1fr;
-
-    row-gap: 1px;
-    column-gap: 1px;
 }
 
-.type {
+.type-1 {
     background-color: var(--type1);
+}
+
+.type-2 {
+    background-color: var(--type2);
+}
+
+.type-3 {
+    background-color: var(--type3);
+}
+
+.type-4 {
+    background-color: var(--type4);
 }
 
 @media only screen and (max-width: 600px) {

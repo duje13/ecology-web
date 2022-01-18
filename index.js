@@ -3,6 +3,8 @@ const GRID_COLUMNS = 15;
 const GRID_CELLS = GRID_COLUMNS * GRID_ROWS;
 const LANGUAGE_STORAGE_KEY = "language";
 
+let timerId;
+
 /**
  * Generate divs inside .grid div with 'type'
  * class
@@ -13,7 +15,6 @@ function generateGrids()
     for (let i = 0; i < x.length; i++) {
         for (let j = 0; j < GRID_CELLS; j++) {
             let el = document.createElement('div');
-            el.classList.add("type");
             x[i].appendChild(el);
         }
     }
@@ -97,11 +98,44 @@ function loadLanguage()
     document.getElementById("language-selector").value = lan;
 }
 
+/**
+ * Set random class
+ * 
+ * @param {string} selector Elements to set class
+ * @param {array} probabilities Array of arrays of two elements: 0: probability 1: class
+ */
+function setRandomClass(selector, probabilities)
+{
+    let x = document.querySelectorAll(selector);
+
+    for (let i = 0; i<x.length; i++) {
+        let r = Math.random();
+        let sum = 0;
+        for (let j = 0; j<probabilities.length; j++) {
+            sum += probabilities[j][0];
+            if (r < sum) {
+                x[i].className = probabilities[j][1];
+                break;
+            }
+        }
+    }
+}
+
+/**
+ * Set color to grids (x, y and z)
+ */
+function setGridColors()
+{
+    setRandomClass(".x-grid > div", [[0.51, "type-4"], [0.23, "type-2"], [0.26, "type-3"]]);
+    setRandomClass(".y-grid > div", [[0.03, "type-4"], [0.37, "type-2"], [0.24, "type-1"], [0.36, "type-3"]]);
+    setRandomClass(".z-grid > div", [[0.58, "type-1"], [0.23, "type-2"], [0.19, "type-3"]]);
+}
 
 // SCRIPT BODY
 document.addEventListener('DOMContentLoaded', function () {
     loadLanguage();
     generateGrids();
+    setGridColors();
 });
 
 /**
@@ -111,7 +145,13 @@ function onPlayClick()
 {
     let btn = document.querySelector(".play-btn");
     btn.classList.toggle("fa-play-circle");
-    btn.classList.toggle("fa-pause-circle");
+    let isStarted = btn.classList.toggle("fa-pause-circle");
+
+    if (isStarted) {
+        timerId = setInterval(setGridColors, 1000);
+    } else {
+        clearInterval(timerId);
+    }
 }
 
 /**
