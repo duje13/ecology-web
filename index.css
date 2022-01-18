@@ -69,6 +69,7 @@
 .play {
     grid-area: play;
     margin: 1em;
+    align-self: flex-end;
 }
 
 .play-btn {

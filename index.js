@@ -23,8 +23,8 @@ function generateGrids()
  * Set given text as content of elements
  * with given selector
  * 
- * @param mixed selector
- * @param mixed text
+ * @param {string} selector
+ * @param {string} text
  */
 function setTranslation(selector, text)
 {
@@ -37,7 +37,7 @@ function setTranslation(selector, text)
 /**
  * Apply given language to page
  * 
- * @param mixed lan Language to set
+ * @param {string} lan Language to set
  */
 function setLanguage(lan)
 {
@@ -94,6 +94,7 @@ function loadLanguage()
     }
 
     setLanguage(lan);
+    document.getElementById("language-selector").value = lan;
 }
 
 
