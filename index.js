@@ -133,11 +133,9 @@ function setGridColors()
 
 // SCRIPT BODY
 document.addEventListener('DOMContentLoaded', function () {
-    //loadLanguage();
-    setLanguage("hr");
+    loadLanguage();
     generateGrids();
-    //setGridColors();
-    setInterval(setGridColors, 1000);
+    setGridColors();
 });
 
 /**

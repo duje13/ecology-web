@@ -39,7 +39,6 @@ h1 {
     grid-area: language;
     text-align: right;
     margin: 1em;
-    display: none;
 }
 
 .legend {
@@ -76,7 +75,6 @@ h1 {
     grid-area: play;
     margin: 1em;
     align-self: flex-end;
-    display: none;
 }
 
 .play-btn {
